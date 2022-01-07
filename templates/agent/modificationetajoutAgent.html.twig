@@ -20,7 +20,7 @@ d'un agent{% endblock %}
 
 
 <div class="card mb-5 mb-xl-10">
-	<div id="kt_header" style="" class="header align-items-stretch">
+		<div id="kt_header" style="" class="header align-items-stretch">
 						<!--begin::Container-->
 						<div class="container-fluid d-flex align-items-stretch justify-content-between">
 							<!--begin::Aside mobile toggle-->
@@ -53,7 +53,7 @@ d'un agent{% endblock %}
 										<!--begin::Menu-->
 										<div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
 											<div class="menu-item me-lg-1">
-												<h1>Listes des Agent</h1>
+												<h1>Ajout d'un Agent</h1>
 											</div>
 											
 										</div>
@@ -331,7 +331,7 @@ d'un agent{% endblock %}
 								<!--begin::Page title-->
 								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Liste des Agents</h1>
+									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Ajout d'un Agent</h1>
 									<!--end::Title-->
 									<!--begin::Separator-->
 									<span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -340,7 +340,7 @@ d'un agent{% endblock %}
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
 										<li class="breadcrumb-item text-muted">
-											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Accueil</a>
+											<a href="{{path("agent")}}" class="text-muted text-hover-primary">Accueil</a>
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
@@ -365,7 +365,7 @@ d'un agent{% endblock %}
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark">Liste des Agents</li>
+										<li class="breadcrumb-item text-dark">Ajout d'un Agent</li>
 										<!--end::Item-->
 									</ul>
 									<!--end::Breadcrumb-->
@@ -381,5 +381,6 @@ d'un agent{% endblock %}
 								<!--end::Actions-->
 							</div>
 							<!--end::Container-->
+						</div>
 						</div>
 		{% endblock %}

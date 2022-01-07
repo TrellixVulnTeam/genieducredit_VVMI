@@ -63,6 +63,11 @@ class Agent
      */
     private $typeagent;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Partenaires::class, mappedBy="agents")
+     */
+    private $partenaires;
+
     public function __construct()
     {
         $this->concessionnairemarchands = new ArrayCollection();
@@ -72,6 +77,7 @@ class Agent
         }
         
         $this->datemodification = new DateTime('now');
+        $this->partenaires = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -188,6 +194,33 @@ class Agent
     public function setTypeagent(?Typeagent $typeagent): self
     {
         $this->typeagent = $typeagent;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Partenaires[]
+     */
+    public function getPartenaires(): Collection
+    {
+        return $this->partenaires;
+    }
+
+    public function addPartenaire(Partenaires $partenaire): self
+    {
+        if (!$this->partenaires->contains($partenaire)) {
+            $this->partenaires[] = $partenaire;
+            $partenaire->addAgent($this);
+        }
+
+        return $this;
+    }
+
+    public function removePartenaire(Partenaires $partenaire): self
+    {
+        if ($this->partenaires->removeElement($partenaire)) {
+            $partenaire->removeAgent($this);
+        }
 
         return $this;
     }
