@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\TypeAgentRepository;
+use App\Repository\TypeagentRepository;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TypeAgentRepository::class)
+ * @ORM\Entity(repositoryClass=TypeagentRepository::class)
  */
 class Typeagent
 {

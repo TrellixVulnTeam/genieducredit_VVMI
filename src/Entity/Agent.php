@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AgentRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -22,27 +23,27 @@ class Agent
     /**
      * @ORM\Column(type="boolean")
      */
-    private $Actif;
+    private $actif;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $Authenvoiemail;
+    private $authenvoiemail;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $Authenvoisms;
+    private $authenvoisms;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $Datecreation;
+    private $datecreation;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $Datemodification;
+    private $datemodification;
 
   
     /**
@@ -65,6 +66,12 @@ class Agent
     public function __construct()
     {
         $this->concessionnairemarchands = new ArrayCollection();
+
+        if($this->datecreation == null){
+            $this->datecreation = new DateTime('now');
+        }
+        
+        $this->datemodification = new DateTime('now');
     }
 
     public function getId(): ?int
@@ -74,60 +81,60 @@ class Agent
 
     public function getActif(): ?bool
     {
-        return $this->Actif;
+        return $this->actif;
     }
 
-    public function setActif(bool $Actif): self
+    public function setActif(bool $actif): self
     {
-        $this->Actif = $Actif;
+        $this->actif = $actif;
 
         return $this;
     }
 
     public function getAuthenvoiemail(): ?bool
     {
-        return $this->Authenvoiemail;
+        return $this->authenvoiemail;
     }
 
-    public function setAuthenvoiemail(bool $Authenvoiemail): self
+    public function setAuthenvoiemail(bool $authenvoiemail): self
     {
-        $this->Authenvoiemail = $Authenvoiemail;
+        $this->authenvoiemail = $authenvoiemail;
 
         return $this;
     }
 
     public function getAuthenvoisms(): ?bool
     {
-        return $this->Authenvoisms;
+        return $this->authenvoisms;
     }
 
-    public function setAuthenvoisms(bool $Authenvoisms): self
+    public function setAuthenvoisms(bool $authenvoisms): self
     {
-        $this->Authenvoisms = $Authenvoisms;
+        $this->authenvoisms = $authenvoisms;
 
         return $this;
     }
 
     public function getDatecreation(): ?\DateTimeInterface
     {
-        return $this->Datecreation;
+        return $this->datecreation;
     }
 
-    public function setDatecreation(\DateTimeInterface $Datecreation): self
+    public function setDatecreation(\DateTimeInterface $datecreation): self
     {
-        $this->Datecreation = $Datecreation;
+        $this->datecreation = $datecreation;
 
         return $this;
     }
 
-    public function getDatemodification(): ?\DateTimeInterface
+    public function getdatemodification(): ?\DateTimeInterface
     {
-        return $this->Datemodification;
+        return $this->datemodification;
     }
 
-    public function setDatemodification(\DateTimeInterface $Datemodification): self
+    public function setDatemodification(\DateTimeInterface $datemodification): self
     {
-        $this->Datemodification = $Datemodification;
+        $this->datemodification = $datemodification;
 
         return $this;
     }
@@ -184,4 +191,10 @@ class Agent
 
         return $this;
     }
+
+   
+
+
+
+
 }
